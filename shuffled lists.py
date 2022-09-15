@@ -1,21 +1,22 @@
-
-import random
- 
-
-test_list1 = [6, 4, 8, 9, 10]
-test_list2 = [1, 2, 3, 4, 5]
- 
-
-print(f"The original list 1 : {test_list1}")
-print(f"The original list 2 : {test_list2}")
- 
-
-temp = list(zip(test_list1, test_list2))
-random.shuffle(temp)
-res1, res2 = zip(*temp)
-
-res1, res2 = list(res1), list(res2)
- 
-
-print(f"List 1 after shuffle :  {res1}")
-print(f"List 2 after shuffle :  {res2}")
+a=int(input("size 1  "))
+l1=[]
+l2=[]
+for i in range(a):
+    ip=int(input("Enter the element  "))
+    l1.append(ip)
+b=int(input("SIZE 2  "))
+for j in range(b):
+    p=int(input("Enter the element   "))
+    l2.append(p)
+def shuffle(l1,l2):
+    if len(l1) < len(l2):
+        minlength = len(l1)
+    else:
+        minlength = len(l2)
+    shuffled = []
+    for i in range(minlength):
+        shuffled.append(l1[i])
+        shuffled.append(l2[i])
+    shuffled = shuffled + l1[minlength:] + l2[minlength:]
+    return(shuffled)
+print(shuffle(l1,l2))
